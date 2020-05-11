@@ -12,10 +12,13 @@ pip install parktop
 
 ## Usage
 
-```sh
+```python
 from parktop import topup
 
-topup('0123456789', '123456', '75001', days=2)
+topup('0123456789', # Phone Number (= username)
+      '123456',     # Password
+      '75001',      # Zip code
+      days=2)       # Parking time
 ```
 
 ## Release History
