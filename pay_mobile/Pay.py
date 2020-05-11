@@ -1,9 +1,10 @@
 from selenium import webdriver
 import time
 
-def topup(num, password, cp, days=6):
+def topup(num, password, cp, days=6, headless=True):
     options = webdriver.ChromeOptions()
-    # options.add_argument('headless')
+    if headless:
+        options.add_argument('headless')
     driver = webdriver.Chrome(chrome_options=options)
 
     driver.get('https://m2.paybyphone.fr/login')
