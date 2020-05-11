@@ -1,5 +1,5 @@
 # Parktop
-In Paris and a few other cities it is now possible to pay parking tickets online on paybyphone.fr. This package 
+In Paris and a few other cities it is now possible to pay parking meter online on paybyphone.fr. This package 
 allows you to automate this payment. It is based on the selenium web driver.
 
 ![](PayByPhone.PNG)
