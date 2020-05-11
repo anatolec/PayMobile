@@ -10,6 +10,14 @@ allows you to automate this payment. It is based on the selenium web driver.
 pip install parktop
 ```
 
+## Usage
+
+```sh
+from parktop import topup
+
+topup('0123456789', '123456', '75001', days=2)
+```
+
 ## Release History
 
 * 1.0.0
