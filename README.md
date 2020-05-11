@@ -10,6 +10,8 @@ allows you to automate this payment. It is based on the selenium web driver.
 pip install parktop
 ```
 
+Note : you need to download and install the Chrome WebDriver before using this package (https://chromedriver.chromium.org/)
+
 ## Usage
 
 ```python
