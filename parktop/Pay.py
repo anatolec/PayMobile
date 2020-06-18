@@ -1,5 +1,8 @@
 from selenium import webdriver
+import chromedriver_autoinstaller
 import time
+
+chromedriver_autoinstaller.install()
 
 def topup(num, password, cp, days=6, headless=True):
     options = webdriver.ChromeOptions()
@@ -10,35 +13,27 @@ def topup(num, password, cp, days=6, headless=True):
     driver.get('https://m2.paybyphone.fr/login')
 
     driver.implicitly_wait(100)
-    driver.find_element_by_name('phone').send_keys(num)
+
+    driver.find_element_by_name('phoneLogin').send_keys(num)
     driver.find_element_by_name('password').send_keys(password)
     driver.find_element_by_xpath("//button[@type='submit']").click()
-
-    time.sleep(5)
 
     els = driver.find_elements_by_xpath("//button[@analytics-event='Accept GDPR']")
 
     if len(els):
+        time.sleep(1)
         els[0].click()
 
-    time.sleep(5)
-
-    driver.find_element_by_xpath("//span[text()='Stationner']").click()
-
-    time.sleep(5)
+    driver.find_element_by_xpath("//span[text()='Park']").click()
 
     driver.find_element_by_name('advertisedLocationNumber').send_keys(cp)
-    driver.find_element_by_xpath("//span[text()='Continuer']").click()
-
-    time.sleep(5)
+    driver.find_element_by_xpath("//span[text()='Continue']").click()
 
     driver.find_element_by_name('quantity').send_keys(days)
-    driver.find_element_by_xpath("//span[text()='Continuer']").click()
+    time.sleep(1)
+    driver.find_element_by_xpath("//span[text()='Continue']").click()
 
-    time.sleep(5)
-
+    time.sleep(1)
     driver.find_element_by_xpath("//button[@type='submit']").click()
-
-    time.sleep(20)
 
     driver.close()
