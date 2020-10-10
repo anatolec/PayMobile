@@ -1,11 +1,11 @@
 import pathlib
 from setuptools import setup, find_packages
-import parktop
+import paybyphone_api
 
 HERE = pathlib.Path(__file__).parent
 
-VERSION = parktop.__version__
-PACKAGE_NAME = 'parktop'
+VERSION = paybyphone_api.__version__
+PACKAGE_NAME = 'paybyphone_api'
 AUTHOR = 'Anatole Callies'
 AUTHOR_EMAIL = 'anatole@callies.fr'
 URL = 'https://github.com/anatolec/PayMobile'
